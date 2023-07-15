@@ -1,3 +1,2 @@
-import os
-a, b = os.get_terminal_size()
-print(a, b)
+for i, j in enumerate(["a", "b"]):
+    print(i, j)

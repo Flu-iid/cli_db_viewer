@@ -1,5 +1,6 @@
 import sqlite3
 import slp
+import showable
 
 con = sqlite3.connect("test.db")
 cur = con.cursor()
@@ -23,9 +24,8 @@ def insert_data(data: list, table):
 def show_table(table):
     cur.execute(f"SELECT * FROM {table}")
     col = [i[0] for i in cur.description]
-    print(col)
-    for i in cur:
-        print(i)
+    sh = showable.Showable(col, [[]])
+    sh.show()
 
 
 d = (1, "learn mongoDB", 2)
